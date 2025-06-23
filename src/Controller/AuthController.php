@@ -25,7 +25,6 @@ class AuthController
         $middleware->handle($body, function ($validRequest) {
             $user = new User(
                 $validRequest['name'],
-                $validRequest['age'],
                 $validRequest['email'],
                 $validRequest['password']
             );

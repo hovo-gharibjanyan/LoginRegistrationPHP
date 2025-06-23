@@ -12,10 +12,6 @@ class ValidationMiddleware
             $errors[] = 'Name must be at least 2 characters.';
         }
 
-        if (!isset($request['age']) || (int)$request['age'] < 18) {
-            $errors[] = 'User must be at least 18 years old.';
-        }
-
         if (!empty($errors)) {
             http_response_code(422);
             echo json_encode(['errors' => $errors]);
